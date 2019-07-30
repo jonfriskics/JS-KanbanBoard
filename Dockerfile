@@ -1,6 +1,10 @@
 FROM node:12.7-alpine
 
-WORKDIR /src/app/
+ENV APP_DIR /src/app/
+
+RUN mkdir -p $APP_DIR
+
+WORKDIR ${APP_DIR}
 
 ADD ./package.json .
 
